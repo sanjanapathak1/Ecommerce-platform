@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYC Verification | AlizoneX</title>
+    <link rel="stylesheet" href="KYC.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <span class="brand-gold">ALIZONE</span>
+                <span class="brand-purple">X</span>
+            </div>
+            <div class="nav-search">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search..." class="search-input">
+            </div>
+            <button class="logout-btn">
+                <span class="logout-icon">🚪</span>
+                <span>Logout</span>
+            </button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="page-title">KYC Verification</h1>
+
+            <!-- Step Indicator -->
+            <div class="step-indicator">
+                <div class="step-item" data-step="1">
+                    <div class="step-circle active" id="stepCircle1">1</div>
+                    <span class="step-label active" id="stepLabel1">ID Proof</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item" data-step="2">
+                    <div class="step-circle" id="stepCircle2">2</div>
+                    <span class="step-label" id="stepLabel2">Face Verification</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item" data-step="3">
+                    <div class="step-circle" id="stepCircle3">3</div>
+                    <span class="step-label" id="stepLabel3">Address Proof</span>
+                </div>
+            </div>
+
+            <div class="kyc-layout">
+                <!-- Form Section -->
+                <div class="form-section">
+                    <!-- Step 1: ID Proof -->
+                    <div id="step1" class="form-step active-step">
+                        <h2 class="form-title">Complete Your KYC Verification</h2>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Select ID Type</label>
+                            <select class="form-select">
+                                <option>Aadhar Card</option>
+                                <option>Passport</option>
+                                <option>Driver's License</option>
+                                <option>Voter ID</option>
+                            </select>
+                        </div>
+
+                        <div class="upload-grid">
+                            <div class="upload-box">
+                                <div class="upload-icon">📤</div>
+                                <div class="upload-title">Front of ID</div>
+                                <div class="upload-hint">Click to upload</div>
+                            </div>
+                            <div class="upload-box">
+                                <div class="upload-icon">📤</div>
+                                <div class="upload-title">Back of ID</div>
+                                <div class="upload-hint">Click to upload</div>
+                            </div>
+                        </div>
+
+                        <div class="file-info">Supported: JPG, PNG, PDF (Max 5MB)</div>
+                        
+                        <button class="next-btn" data-next="2">Next →</button>
+                    </div>
+
+                    <!-- Step 2: Face Verification -->
+                    <div id="step2" class="form-step">
+                        <h2 class="form-title">Verify Your Identity</h2>
+                        <p class="form-subtitle">Please align your face within the frame</p>
+
+                        <div class="camera-box">
+                            <div class="camera-icon">📷</div>
+                            <div class="camera-text">Camera access required</div>
+                            <button class="camera-btn">Start Camera</button>
+                        </div>
+
+                        <div class="tips-grid">
+                            <div class="tip-card">
+                                <div class="tip-icon">⬜</div>
+                                <span>Align in frame</span>
+                            </div>
+                            <div class="tip-card">
+                                <div class="tip-icon">☀️</div>
+                                <span>Good lighting</span>
+                            </div>
+                            <div class="tip-card">
+                                <div class="tip-icon">😊</div>
+                                <span>Remove glasses</span>
+                            </div>
+                        </div>
+
+                        <button class="next-btn" data-next="3">Next →</button>
+                    </div>
+
+                    <!-- Step 3: Address Proof -->
+                    <div id="step3" class="form-step">
+                        <h2 class="form-title">Verify Your Address</h2>
+                        <p class="form-subtitle">Provide your current residential address</p>
+
+                        <div class="form-group">
+                            <label class="form-label">Address Line 1</label>
+                            <input type="text" class="form-input" placeholder="Street address, P.O. box">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Address Line 2 <span class="optional">(Optional)</span></label>
+                            <input type="text" class="form-input" placeholder="Apartment, suite, unit">
+                        </div>
+
+                        <div class="address-row">
+                            <div class="form-group">
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-input" placeholder="City">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">State</label>
+                                <select class="form-select">
+                                    <option>Select State</option>
+                                    <option>California</option>
+                                    <option>Texas</option>
+                                    <option>New York</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Postal Code</label>
+                                <input type="text" class="form-input" placeholder="ZIP code">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Upload Address Proof</label>
+                            <div class="upload-box full-width">
+                                <div class="upload-icon">☁️</div>
+                                <div class="upload-title">Click to upload</div>
+                                <div class="upload-hint">Utility bill / Bank statement</div>
+                            </div>
+                        </div>
+
+                        <button class="submit-btn">Submit KYC ✓</button>
+                    </div>
+                </div>
+
+                <!-- Sidebar Section -->
+                <div class="sidebar">
+                    <div id="sidebar1" class="sidebar-card">
+                        <img src="https://images.unsplash.com/photo-1628619487925-e9b8fc4c6b08?w=400&h=200&fit=crop" alt="KYC" class="sidebar-img">
+                        <div class="sidebar-content">
+                            <h3 class="sidebar-title">Why KYC?</h3>
+                            <div class="benefits-list">
+                                <div class="benefit-item">✓ Trusted identity</div>
+                                <div class="benefit-item">✓ Fraud prevention</div>
+                                <div class="benefit-item">✓ Secure transactions</div>
+                            </div>
+                        </div>
+                        <div class="security-card">
+                            <div class="security-icon">🛡️</div>
+                            <div class="security-title">100% Secure</div>
+                            <div class="security-text">Your data is encrypted</div>
+                        </div>
+                    </div>
+
+                    <div id="sidebar2" class="sidebar-card" style="display: none;">
+                        <h3 class="sidebar-title">Tips for Best Photo</h3>
+                        <div class="tips-list">
+                            <div class="tip-item">
+                                <span class="tip-emoji">☀️</span>
+                                <div>
+                                    <strong>Good lighting</strong>
+                                    <p>Well-lit area, no shadows</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-emoji">😐</span>
+                                <div>
+                                    <strong>Neutral expression</strong>
+                                    <p>Don't smile too wide</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-emoji">👓</span>
+                                <div>
+                                    <strong>No glasses/mask</strong>
+                                    <p>Clear face visibility</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="security-card small">
+                            <div class="security-icon">🔒</div>
+                            <div>Your data is encrypted & secure</div>
+                        </div>
+                    </div>
+
+                    <div id="sidebar3" class="sidebar-card" style="display: none;">
+                        <h3 class="sidebar-title">Why Address Verification?</h3>
+                        <div class="benefits-list">
+                            <div class="benefit-item">✓ Prevent fraud</div>
+                            <div class="benefit-item">✓ Trusted transactions</div>
+                            <div class="benefit-item">✓ Account recovery</div>
+                        </div>
+                        <div class="security-card small">
+                            <div class="security-icon">🏠</div>
+                            <div>Address helps secure your account</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Simple JavaScript for step navigation
+        let currentStep = 1;
+
+        function updateStep(step) {
+            // Hide all steps
+            document.getElementById('step1').classList.remove('active-step');
+            document.getElementById('step2').classList.remove('active-step');
+            document.getElementById('step3').classList.remove('active-step');
+            
+            // Show current step
+            document.getElementById(`step${step}`).classList.add('active-step');
+            
+            // Update step circles
+            for(let i = 1; i <= 3; i++) {
+                const circle = document.getElementById(`stepCircle${i}`);
+                const label = document.getElementById(`stepLabel${i}`);
+                if(i <= step) {
+                    circle.classList.add('active');
+                    label.classList.add('active');
+                } else {
+                    circle.classList.remove('active');
+                    label.classList.remove('active');
+                }
+            }
+            
+            // Update sidebar
+            document.getElementById('sidebar1').style.display = step === 1 ? 'block' : 'none';
+            document.getElementById('sidebar2').style.display = step === 2 ? 'block' : 'none';
+            document.getElementById('sidebar3').style.display = step === 3 ? 'block' : 'none';
+            
+            currentStep = step;
+        }
+
+        // Add click handlers to next buttons
+        document.querySelectorAll('.next-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const nextStep = parseInt(btn.getAttribute('data-next'));
+                if(nextStep <= 3) {
+                    updateStep(nextStep);
+                }
+            });
+        });
+
+        // Submit button handler
+        document.querySelector('.submit-btn')?.addEventListener('click', () => {
+            alert('KYC submitted successfully! Thank you for verification.');
+        });
+    </script>
+</body>
+</html>
